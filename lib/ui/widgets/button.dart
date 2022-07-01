@@ -1,0 +1,34 @@
+import 'package:flutter/material.dart';
+import 'package:gettest/ui/theme.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+class MyButton extends StatelessWidget {
+  final String label;
+  final Function()? onTap;
+  const MyButton({ Key? key,required this.label,this.onTap }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        alignment: Alignment.center,
+        width: 120,
+        height: 55,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15),
+          color: primaryClr
+        ),
+        child: Text(
+          label,
+           style: GoogleFonts.lato(
+                    textStyle: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
+                  ),
+        ),
+      ),
+    );
+  }
+}
